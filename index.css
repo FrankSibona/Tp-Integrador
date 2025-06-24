@@ -1,0 +1,208 @@
+body {
+  font-family: sans-serif;
+  background-color: #fcfcfc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgb(10, 10, 10);
+  color: white;
+  padding:  2rem 1rem;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #444;
+  list-style: none;
+  padding: 0.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  padding: 2rem;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Barra superior: buscador + logo + carrito */
+.top-bar {
+  background-color:transparent;
+  color: white;
+  display: flex;
+  align-items:start;
+  justify-content: space-between;
+  padding: 0rem 0rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.logo img {
+  width: 120px;                 /* Ajustá el tamaño del logo */
+  height: auto;
+  margin-top: -50px;
+  vertical-align: middle;
+}
+
+/* Buscador */
+.buscador {
+  flex: 1;
+  display: flex;
+}
+
+.buscador input {
+  flex: 1;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.buscador button {
+  padding: 0.4rem 1rem;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.buscador button:hover {
+  background-color: lightblue;
+}
+
+.usuario{
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+
+/* Categorías */
+.categorias {
+  background-color: #333;
+  padding: 0.5rem;
+}
+
+.categorias ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.categorias a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.categorias a:hover {
+  background-color: #555;
+}
+
+.product-hero {
+  padding: 2rem;
+  text-align: center;
+  background-color:rgb(199, 193, 193);
+}
+
+.product-hero h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #222;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 4rem;
+  justify-items: center;
+}
+
+.product-card {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 2rem;
+  min-height: 400px; /* o el valor que se ajuste a tu diseño */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+
+.precio {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #0d6efd;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #0d6efd;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0b5ed7;
+}
+
+.product-img {
+  width: 100%;
+  height: 160px;
+  background-color: #eaeaea;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.product-img img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
