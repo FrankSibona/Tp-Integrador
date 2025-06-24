@@ -1,40 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>  
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0 "/>
-        <title>Pagina de Registro para nuevos usuarios</title>
-        <link rel="stylesheet" href="/css/style.css"/>
+<head>  
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Registro de usuario</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 
-    </head>
-    <body>
-        <div class="register-container">
-            <h2>Crear una cuenta</h2>
-            <form action="#" method="post" class="form-register">
-                <label for="nombre">Nombre Completo </label>
-                <input type="text" id="nombre" name="nombre" required />
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Roboto Condensed', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-                <label for="e-mail">Correo electronico </label>
-                <input type="text" id="e-mail" name="e-mail" required />
+        .register-container {
+            background-color: #111;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
 
-                <label for="usuario">Nombre de Usuario</label>
-                <input type="text" id="usuario" name="usuario" required />
+        h2 {
+            margin-bottom: 20px;
+            color: #00aaff;
+            font-size: 28px;
+        }
 
-                <label for="password">Contraseña </label>
-                <input type="password" id="password" name="password" required />
+        label {
+            display: block;
+            margin-top: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
 
-                <label for="confirmar">Repetir Contraseña </label>
-                <input type="password" id="confirmar" name="confirmar" required />
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: #222;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            box-sizing: border-box;
+        }
 
-                <p id="error" style="color:red;"></p>
+        button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            background-color: #00aaff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-                <button type="submit"><a href="/login/login.html">Registrarse</button></a> 
-            </form>
+        button:hover {
+            background-color: #0088cc;
+        }
 
-            <p>Ya tenes una cuenta? <a href="/login/login.html">Iniciar Sesion</a></p>
-            <a href="/index.html">Volver al inicio</a>
-        </div>
+        a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        #error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Crear una cuenta</h2>
+        <form id="registerForm" action="javascript:void(0);" method="post">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" required />
+
+            <label for="e-mail">Correo Electrónico</label>
+            <input type="text" id="e-mail" name="e-mail" required />
+
+            <label for="usuario">Nombre de Usuario</label>
+            <input type="text" id="usuario" name="usuario" required />
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" required />
+
+            <label for="confirmar">Repetir Contraseña</label>
+            <input type="password" id="confirmar" name="confirmar" required />
+
+            <p id="error"></p>
+
+            <button type="submit">Registrarse</button>
+        </form>
+
+        <p>¿Ya tenés una cuenta? <a href="/login/login.html">Iniciar Sesión</a></p>
+        <p><a href="/index.html">⬅ Volver al inicio</a></p>
+    </div>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function (e) {
+            const nombre = document.getElementById("nombre").value.trim();
+            const email = document.getElementById("e-mail").value.trim();
+            const usuario = document.getElementById("usuario").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const confirmar = document.getElementById("confirmar").value.trim();
+            const error = document.getElementById("error");
+
+            if (!nombre || !email || !usuario || !password || !confirmar) {
+                error.textContent = "Por favor, completá todos los campos.";
+                return;
+            }
+
+            if (password !== confirmar) {
+                error.textContent = "Las contraseñas no coinciden.";
+                return;
+            }
+
         
-
-    </body>
-</html> 
+            error.textContent = "";
+            window.location.href = "/index.html";
+        });
+    </script>
+</body>
+</html>
